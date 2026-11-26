@@ -3,6 +3,9 @@ export abstract class ValueObject {
     if (other === null || other === undefined) {
       return false;
     }
+    if (this.constructor !== other.constructor) {
+      return false;
+    }
     return JSON.stringify(this) === JSON.stringify(other);
   }
 }
